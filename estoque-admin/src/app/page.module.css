@@ -1,0 +1,10 @@
+.container {
+  width: 100%;
+  height: 100%;
+  background-image: url("https://wallpapers.com/images/hd/all-black-background-5nb6t1glu246vm6b.jpg");
+  background-repeat: no-repeat;     
+  background-size: cover;          
+  background-position: center; 
+  border-radius: 15px;     
+    opacity: 90%;
+}
