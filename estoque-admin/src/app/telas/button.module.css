@@ -1,0 +1,50 @@
+.botao {
+  padding: 10px;
+  border-radius: 6px;
+  border: none;
+  background-color: rgb(88, 60, 150);
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.botao:hover {
+  background-color: rgb(70, 50, 130);
+  transform: scale(1.02);
+}
+
+.botoes {
+  display: flex;
+  gap: 10px;
+}
+
+.botoes button {
+  flex: 1;
+  padding: 10px;
+  border-radius: 6px;
+  border: none;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.botaoAdicionar {
+  background-color: rgb(88, 60, 150);
+  color: white;
+}
+
+.botaoAdicionar:hover {
+  background-color: rgb(70, 50, 130);
+  transform: scale(1.02);
+}
+
+.botaoExcluir {
+  background-color: rgb(200, 60, 60);
+  color: white;
+}
+
+.botaoExcluir:hover {
+  background-color: rgb(170, 40, 40);
+  transform: scale(1.02);
+}
