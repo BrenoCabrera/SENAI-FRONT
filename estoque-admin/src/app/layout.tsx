@@ -1,37 +1,23 @@
-"use client";
-
 import Link from "next/link";
-import { usePathname } from "next/navigation";
 import "./globals.css";
 
-export default function RootLayout({
-  children,
-}: Readonly<{
+export default function RootLayout({ children, }: Readonly<{
   children: React.ReactNode;
 }>) {
-  const pathname = usePathname();
-
   return (
     <html lang="pt-br">
       <body>
+
         <header>
-          <h1>Painel Administrativo</h1>
+          <h1>Estocar: Painel Administrativo</h1>
         </header>
 
         <nav>
           <ul>
-            <li className={pathname === "/" ? "active" : ""}>
-              <Link href="/">Início</Link>
-            </li>
-            <li className={pathname.startsWith("/telas/categoria") ? "active" : ""}>
-              <Link href="/telas/categoria/lista">Categoria</Link>
-            </li>
-            <li className={pathname.startsWith("/telas/unidadeMedida") ? "active" : ""}>
-              <Link href="/telas/unidadeMedida/lista">Unidade de Medida</Link>
-            </li>
-            <li className={pathname.startsWith("/telas/produto") ? "active" : ""}>
-              <Link href="/telas/produto/pesquisa">Produto</Link>
-            </li>
+            <Link href="/"> <li>Página Inicial <span>🏠</span></li></Link>
+            <Link href="/telas/categoria/lista"><li>Categoria</li></Link>
+            <Link href="/telas/unidadeMedida/lista"><li>Unidade de Medida</li></Link>
+            <Link href="/telas/produto/pesquisa"><li>Produto</li></Link>
           </ul>
         </nav>
 
@@ -40,8 +26,9 @@ export default function RootLayout({
         </main>
 
         <footer>
-          <p>Todos os direitos reservados</p>
+          <h5>Powered By: Breno Cabrera. Todos os direitos reservados</h5>
         </footer>
+
       </body>
     </html>
   );

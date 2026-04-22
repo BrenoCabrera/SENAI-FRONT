@@ -1,32 +1,31 @@
-"use client";
-import styles from "../../cadastro.module.css";
-import style from "../../button.module.css";
+import styles from "./page.module.css";
+import inputStyles from "../../input.module.css";
+import buttonStyles from "../../button.module.css";
+import textStyles from "../../text.module.css"
 
-export default function CriarUnidadeMedida() {
-  return (
-    <div className={styles.container}>
-      <h1 className={styles.titulo}>Cadastrar Unidade de Medida</h1>
+export default function TelaUnidadeMedidaCadastro() {
+    return (
+        <section className={styles.conteudo}>
 
-      <textarea
-        className={styles.input}
-        placeholder="Descrição"
-      />
+            <h3 className={textStyles.titulo}>Cadastro de Unidades de Medida</h3>
 
-      <div className={styles.fracionavel}>
-        <label className={styles.label} htmlFor="fra">
-          Fracionável:
-        </label>
+            <label htmlFor="nome">Nome:</label>
+            <input className={inputStyles.input} type="text" name="nome" />
 
-        <select className={styles.select} name="fra" id="fra" defaultValue="nao">
-          <option value="sim">Sim</option>
-          <option value="nao">Não</option>
-        </select>
-      </div>
+            <label htmlFor="descricao">Descrição: </label>
+            <textarea className={inputStyles.textArea} name="descricao"></textarea>
 
-        <div className={style.botoes}>
-            <button className={style.botaoAdicionar}>Salvar</button>
-            <button className={style.botaoExcluir}>Excluir</button>
-        </div>
-    </div>
-  );
+            <label htmlFor="fracionavel">Fracionável: </label>
+            <select className={inputStyles.select} name="fracionavel">
+                <option>Não</option>
+                <option>Sim</option>
+            </select>         
+
+            <div className={buttonStyles.divBotoes}>
+                <button className={buttonStyles.botaoSalvar}>Salvar</button>
+                <button className={buttonStyles.botaoExcluir}>Excluir</button>
+            </div>
+
+        </section>
+    )
 }

@@ -1,9 +1,10 @@
 import styles from "./page.module.css";
+import stylesText from "./telas/text.module.css"
 
 export default function Home() {
   return (
     <div className={styles.container}>
-          <h1>BEM VINDO AO ESTOCAR</h1>
+      <h3 className={stylesText.titulo}>Página Inicial: Seja bem vindo!</h3>      
     </div>
   );
 }

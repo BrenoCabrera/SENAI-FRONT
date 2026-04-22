@@ -1,23 +1,31 @@
-"use client";
+'use client';
 
+import styleCards from "../../card.module.css";
+import styles from "../lista/page.module.css";
+import styleTexts from "../../text.module.css";
 import { useRouter } from "next/navigation";
-import styleCards from "../../card.module.css"
 
-export default function TelaListaUnidadeMedida(){
+export default function TelaListaUnidadeMedida() {
     const router = useRouter();
-    return(
-    <div className={styleCards.cardsContainer}>
-        <div className={styleCards.cardCriar} onClick={() => router.push("/telas/unidadeMedida/cadastro")}>➕Criar</div>
-        <div className={styleCards.card} onClick={() => router.push("/telas/unidadeMedida/cadastro")}>Miligrama (mg)</div>
-        <div className={styleCards.card} onClick={() => router.push("/telas/unidadeMedida/cadastro")}>Grama (g)</div>
-        <div className={styleCards.card} onClick={() => router.push("/telas/unidadeMedida/cadastro")}>Quilograma (kg)</div>
-        <div className={styleCards.card} onClick={() => router.push("/telas/unidadeMedida/cadastro")}>Mililitro (ml)</div>
-        <div className={styleCards.card} onClick={() => router.push("/telas/unidadeMedida/cadastro")}>Litro (l)</div>
-        <div className={styleCards.card} onClick={() => router.push("/telas/unidadeMedida/cadastro")}>Milímetro (mm)</div>
-        <div className={styleCards.card} onClick={() => router.push("/telas/unidadeMedida/cadastro")}>Metro (m)</div>
-        <div className={styleCards.card} onClick={() => router.push("/telas/unidadeMedida/cadastro")}>Unidade (u)</div>
-        <div className={styleCards.card} onClick={() => router.push("/telas/unidadeMedida/cadastro")}>Dezenia (dez)</div>
-        <div className={styleCards.card} onClick={() => router.push("/telas/unidadeMedida/cadastro")}>Duzia (duz)</div>
-    </div>
+    return (
+        <section className={styles.conteudo}>
+
+            <h3 className={styleTexts.titulo}>Lista de Unidades de Medida</h3>
+
+            <div className={styleCards.cardsContainer}>
+                <div onClick={() => router.push("/telas/unidadeMedida/cadastro")} className={styleCards.cardCriar}>➕ Criar</div>
+                <div onClick={() => router.push("/telas/unidadeMedida/cadastro")} className={styleCards.card}>Miligrama (mg)</div>
+                <div onClick={() => router.push("/telas/unidadeMedida/cadastro")} className={styleCards.card}>Grama (g)</div>
+                <div onClick={() => router.push("/telas/unidadeMedida/cadastro")} className={styleCards.card}>Quilograma (kg)</div>
+                <div onClick={() => router.push("/telas/unidadeMedida/cadastro")} className={styleCards.card}>Mililitro (ml)</div>
+                <div onClick={() => router.push("/telas/unidadeMedida/cadastro")} className={styleCards.card}>Litro (l)</div>
+                <div onClick={() => router.push("/telas/unidadeMedida/cadastro")} className={styleCards.card}>Milímetro (mm)</div>
+                <div onClick={() => router.push("/telas/unidadeMedida/cadastro")} className={styleCards.card}>Metro (m)</div>
+                <div onClick={() => router.push("/telas/unidadeMedida/cadastro")} className={styleCards.card}>Unidade (un)</div>
+                <div onClick={() => router.push("/telas/unidadeMedida/cadastro")} className={styleCards.card}>Dezena (dez)</div>
+                <div onClick={() => router.push("/telas/unidadeMedida/cadastro")} className={styleCards.card}>Dúzia (duz)</div>
+            </div>
+            
+        </section>
     )
 }

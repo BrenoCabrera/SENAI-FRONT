@@ -1,28 +1,25 @@
-"use client";
-import styles from "../../cadastro.module.css";
-import style from "../../button.module.css";
+import styles from "./page.module.css";
+import inputStyles from "../../input.module.css";
+import buttonStyles from "../../button.module.css";
+import textStyles from "../../text.module.css"
 
-export default function CriarCategoria() {
-  return (
-    <div className={styles.container}>
-      <h1 className={styles.titulo}>Cadastrar Categoria</h1>
+export default function TelaCategoriaCadastro() {
+    return (
+        <section className={styles.conteudo}>
 
-      <input
-        className={styles.input}
-        type="text"
-        placeholder="Nome..."
-      />
+            <h3 className={textStyles.titulo}>Cadastro de Categorias</h3>
 
-      <textarea
-        className={styles.input}
-        placeholder="Descrição"
-      />
+            <label htmlFor="nome">Nome:</label>
+            <input className={inputStyles.input} type="text" name="nome" />
 
-<div className={style.botoes}>
-  <button className={style.botaoAdicionar}>Salvar</button>
-  <button className={style.botaoExcluir}>Excluir</button>
-</div>
+            <label htmlFor="descricao">Descrição: </label>
+            <textarea className={inputStyles.textArea} name="descricao"></textarea>
 
-    </div>
-  );
+            <div className={buttonStyles.divBotoes}>
+                <button className={buttonStyles.botaoSalvar}>Salvar</button>
+                <button className={buttonStyles.botaoExcluir}>Excluir</button>
+            </div>
+
+        </section>
+    )
 }

@@ -1,61 +1,70 @@
 "use client";
-import styles from "../../../pesquisa.module.css";
+
+import { useRouter } from "next/navigation";
+import inputStyles from "../../input.module.css";
+import styleTexts from "../../text.module.css";
+import tableStyles from "../../table.module.css";
+import buttonStyles from "../../button.module.css";
+import styles from "../pesquisa/page.module.css";
+
 
 export default function TelaPesquisaProduto() {
+    const router = useRouter();
+
     return (
-        <section className={styles.container}>
-            <h3 className={styles.titulo}>
-                Pesquisa de Produtos
-            </h3>
+        <section className={styles.conteudo}>
 
-            <hr className={styles.hr}/>
+            <h3 className={styleTexts.titulo}>Pesquisa de Produtos</h3>
 
-            
+            <div className={styles.parametros}>
+                <div>
+                    <label htmlFor="categoria">Categoria: </label> <br></br>
+                    <select className={inputStyles.select} name="categoria">
+                        <option></option>
+                        <option>Ferramentas</option>
+                        <option>Utensílios</option>
+                        <option>Líquidos Inflamáveis</option>
+                        <option>Alimentos</option>
+                        <option>Cama, Mesa e Banho</option>
+                    </select>
 
-            <div className={styles.cont1}>
-                <label htmlFor="categoria" className={styles.label}>Categoria:</label>
-                <select name="categoria" id="categoria" className={styles.select}>
-                    <option value="canecas">Canecas</option>
-                    <option value="chaleiras">Chaleiras</option>
-                </select>
-
-                <label htmlFor="desc" className={styles.label}>Nome ou Descrição:</label>
-                <input
-                    type="text"
-                    name="desc"
-                    className={styles.input}
-                />
-
-                <button className={styles.button}>
-                    Pesquisar
-                </button>
+                </div>
+                <div style={{flex: 1}}>
+                    <label htmlFor="nomeDescricao">Nome ou Descrição: </label> <br></br>
+                    <input className={inputStyles.input} style={{width: '100%'}} type="text" name="nomeDescricao" />
+                </div>
+                <button className={buttonStyles.botaoPadrao} style={{width: '100px'}}>🔍</button>
             </div>
 
-            <div className={styles.tabela}>
-                <table className={styles.table}>
-                    <thead>
-                        <tr>
-                            <th>Categoria</th>
-                            <th>Nome</th>
-                            <th>Quantidade</th>
-                        </tr>
-                    </thead>
+            <table className={tableStyles.table}>
+                <thead>
+                    <tr>
+                        <th>Categoria</th>
+                        <th>Nome</th>
+                        <th>Quantidade</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Utensílios</td>
+                        <td>Panela que faz feijão Fu Fu</td>
+                        <td>30 Un</td>
+                    </tr>
+                    <tr>
+                        <td>Alimentos</td>
+                        <td>Sal</td>
+                        <td>30 Gr</td>
+                    </tr>
+                    <tr>
+                        <td>Líquidos Inflamáveis</td>
+                        <td>Thinner</td>
+                        <td>25 Lt</td>
+                    </tr>
+                </tbody>
+            </table>
 
-                    <tbody>
-                        <tr>
-                            <td>oi</td>
-                            <td>oi</td>
-                            <td>oi</td>
-                        </tr>
+            <button onClick={() => router.push("/telas/cadastro")}>Cadastrar</button>
 
-                        <tr>
-                            <td>a</td>
-                            <td>a</td>
-                            <td>a</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
         </section>
-    );
+    )
 }

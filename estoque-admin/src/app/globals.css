@@ -1,91 +1,82 @@
+:root {
+  --cor-principal: rgb(255, 200, 100);
+  --cor-principal-gradiente: rgb(245, 180, 90);
+}
+
 * {
-  padding: 0;
   margin: 0;
+  padding: 0;
+  overflow: hidden;
   text-decoration: none;
+  color: black;
+  font-family: Calibri, 'Gill Sans', 'Gill Sans MT', 'Trebuchet MS', sans-serif;
+  box-sizing: border-box;
 }
 
 body {
+  width: 100vw;
+  height: 100vh;
+  grid-template-rows: 40px auto 35px;
+  grid-template-columns: 180px auto;
   display: grid;
   grid-template-areas: 
-    "h h"
-    "n m"
-    "f f";
-  height: 100vh;
-  width: 100vw;
-  grid-template-columns: 200px 1fr;
-  grid-template-rows: auto 1fr 30px;
+    'h h'
+    'n m'
+    'f f';
 }
 
 header {
-  background-color: rgb(88, 60, 150);
+  background: linear-gradient(var(--cor-principal), var(--cor-principal-gradiente));
+  text-align: center;
   grid-area: h;
-  text-align: center;
-  color: rgb(255, 255, 255);
-}
-
-footer {
-  background-color: rgb(142, 102, 205);
-  grid-area: f;
-  text-align: center;
-  color: white;
-}
-
-main {
-  background: white;
-  grid-area: m;
-  text-align: center;
-  color: rgb(0, 0, 0);
-  margin: 15px;
-  border-radius: 10px;
 }
 
 nav {
-  background: linear-gradient(180deg, #e4e4e4, #b4b4b4);
+  border-right: 1px solid var(--cor-principal);
   grid-area: n;
-  text-align: center;
-  padding: 10px;
-  border: 1px solid rgb(204, 204, 204);
+  padding-top: 10px;
 }
 
 nav ul {
-  list-style: none;
   display: flex;
   flex-direction: column;
-  gap: 30px;
-  height: 100%;
-  padding: 0;
+  gap: 20px; 
+  font-size: 16px;
+  padding-left: 10px;
 }
 
-nav li {
-  height: 40px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  border-left: 1px solid rgb(80, 6, 255);
-  transition: transform 0.2s ease, background-color 0.2s;
+nav ul li {
+  list-style-type: none;
+  padding: 5px;  
+  border-top-left-radius: 8px;
+  border-bottom-left-radius: 8px;
+  border-left: 4px solid white;
+  border-bottom: 2px solid white;
 }
 
-nav li:hover {
-  border-radius: 7px;
+nav ul li:hover {
+  background: linear-gradient(var(--cor-principal), var(--cor-principal-gradiente));
   cursor: pointer;
-  color: rgb(36, 60, 82);
-  transform: scale(1.05);
+  border-left: 4px solid brown;
+  border-bottom: 2px solid brown;
 }
 
-nav li a {
-  display: block;
-  padding: 10px 15px;
-  color: black;
-  text-decoration: none;
-  border-radius: 4px;
-  transition: background 0.2s;
+nav ul li span {
+  padding: 2px;
+  background: white;
+  border: 1px solid brown;
+  border-radius: 50%;
 }
 
-nav li a:hover {
-  background-color: #ddd;
+main {
+  grid-area: m;
+  padding: 20px;
 }
 
-li.active a {
-  background-color: #333;
-  color: white;
+footer {
+  text-align: right;
+  font-size: large;
+  padding: 5px;
+  background: linear-gradient(var(--cor-principal), var(--cor-principal-gradiente));
+  grid-area: f;
 }

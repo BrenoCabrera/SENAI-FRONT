@@ -1,50 +1,47 @@
-.botao {
-  padding: 10px;
-  border-radius: 6px;
-  border: none;
-  background-color: rgb(88, 60, 150);
-  color: white;
-  font-weight: bold;
-  cursor: pointer;
-  transition: 0.2s;
+.divBotoes {
+    display: flex;
+    justify-content: space-evenly;
 }
 
-.botao:hover {
-  background-color: rgb(70, 50, 130);
-  transform: scale(1.02);
+.botaoSalvar {
+    background-color: lightgreen;
+    color: black;
+    padding: 10px;
+    border: 1px solid darkgreen;
 }
 
-.botoes {
-  display: flex;
-  gap: 10px;
-}
-
-.botoes button {
-  flex: 1;
-  padding: 10px;
-  border-radius: 6px;
-  border: none;
-  font-weight: bold;
-  cursor: pointer;
-  transition: 0.2s;
-}
-
-.botaoAdicionar {
-  background-color: rgb(88, 60, 150);
-  color: white;
-}
-
-.botaoAdicionar:hover {
-  background-color: rgb(70, 50, 130);
-  transform: scale(1.02);
+.botaoSalvar:hover {
+    background-color: darkgreen;
+    color: white;
+    cursor: pointer;
+    transition: 200ms;
 }
 
 .botaoExcluir {
-  background-color: rgb(200, 60, 60);
-  color: white;
+    background-color: rgb(255, 200, 200);
+    color: black;
+    padding: 10px;
+    border: 1px solid darkred;
 }
 
 .botaoExcluir:hover {
-  background-color: rgb(170, 40, 40);
-  transform: scale(1.02);
+    background-color: darkred;
+    color: white;
+    cursor: pointer;
+    transition: 200ms;
+}
+
+.botaoPadrao {
+    background-color: rgb(231, 231, 231);
+    color: black;
+    padding: 10px;
+    border: 1px solid rgb(0, 0, 0);
+}
+
+.botaoPadrao:hover {
+    background: linear-gradient(rgb(255, 230, 210), rgb(245, 220, 180));
+    cursor: pointer;
+    color: white;
+    cursor: pointer;
+    transition: 200ms;
 }
